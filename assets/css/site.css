@@ -538,8 +538,10 @@ input[type="range"]::-moz-range-thumb {
   padding-top: 20px;
   align-items: start;
 }
-.meter {
+.hero-foot-l {
   grid-column: 1 / span 5;
+}
+.meter {
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
@@ -562,6 +564,37 @@ input[type="range"]::-moz-range-thumb {
 .meter-hint {
   flex-basis: 100%;
   color: var(--faint);
+}
+.hero-creds {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 10px;
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid var(--rule-2);
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--mute);
+  text-decoration: none;
+}
+.hero-creds .sym {
+  align-self: center;
+  font-size: 12px;
+  color: var(--signal);
+}
+.hero-creds .nw {
+  white-space: nowrap;
+}
+.hc-k {
+  font-weight: 800;
+  color: var(--fg);
+}
+.hero-creds:hover .hc-v {
+  color: var(--fg);
+}
+.hero-creds:hover .arr {
+  transform: translateY(3px);
 }
 .proof {
   grid-column: 7 / -1;
@@ -598,6 +631,102 @@ input[type="range"]::-moz-range-thumb {
 }
 .proof:hover .arr {
   transform: translateX(6px);
+}
+
+/* ------------------------------------------------------------------ credentials band (under the hero) */
+.cband {
+  padding-top: clamp(56px, 7vw, 104px);
+}
+.cband-in {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--gap);
+  row-gap: 18px;
+}
+.cband-t {
+  grid-column: 1 / span 3;
+  align-self: start;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-top: 14px;
+  border-top: 1px solid var(--fg);
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 1.4;
+}
+.cband-t .sym {
+  font-size: 17px;
+  color: var(--signal);
+}
+.cband-grid {
+  grid-column: 4 / -1;
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.35fr) minmax(0, 1.15fr);
+  column-gap: var(--gap);
+  border-top: 1px solid var(--fg);
+}
+.cband-col {
+  padding-top: 14px;
+  min-width: 0;
+}
+.cband-h {
+  margin-bottom: 12px;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--mute);
+}
+.cb-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.cb-list > li {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 14px;
+}
+.cb-t {
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 1.35;
+}
+.cb-o {
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--mute);
+}
+.cb-track {
+  margin: 12px 0 3px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--faint);
+}
+.cb-badges {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.cb-badges li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  column-gap: 8px;
+  font-size: 14px;
+  line-height: 1.55;
+}
+.cb-verify {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 3px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--signal-text);
+  text-decoration: none;
+}
+.cb-verify:hover {
+  text-decoration: underline;
 }
 
 /* ------------------------------------------------------------------ sections */
@@ -1775,98 +1904,6 @@ input[type="range"]::-moz-range-thumb {
   color: var(--mute);
   white-space: nowrap;
 }
-.creds {
-  display: grid;
-  grid-template-columns: repeat(12, minmax(0, 1fr));
-  column-gap: var(--gap);
-  row-gap: 18px;
-  margin-top: clamp(64px, 7vw, 110px);
-}
-.creds h3 {
-  grid-column: 1 / span 3;
-}
-.cr-list {
-  grid-column: 4 / -1;
-}
-.cr-sec + .cr-sec {
-  margin-top: clamp(28px, 3vw, 44px);
-}
-.cr-sec-t {
-  margin-bottom: 10px;
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--mute);
-}
-.cr-sec > ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  border-top: 1px solid var(--fg);
-}
-.cr-sec > ul > li,
-.cr-head {
-  display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.4fr) 64px;
-  gap: 16px;
-}
-.cr-sec > ul > li {
-  padding: 14px 0;
-  border-bottom: 1px solid var(--rule);
-}
-.cr-sec > ul > li.cr-group {
-  display: block;
-}
-.cr-tracks {
-  display: grid;
-  grid-template-columns: 1.25fr 1.1fr 1fr;
-  gap: 12px 28px;
-  margin-top: 14px;
-  padding-top: 12px;
-  border-top: 1px dashed var(--rule-2);
-}
-.cr-track-t {
-  margin-bottom: 6px;
-  font-size: 12px;
-  font-weight: 700;
-  color: var(--mute);
-}
-.cr-track ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-.cr-track li {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  column-gap: 10px;
-  padding: 3px 0;
-  font-size: 15px;
-  line-height: 1.45;
-}
-.cr-verify {
-  display: inline-flex;
-  align-items: baseline;
-  gap: 3px;
-  font-size: 12px;
-  font-weight: 700;
-  color: var(--signal-text);
-  text-decoration: none;
-}
-.cr-verify:hover {
-  text-decoration: underline;
-}
-.cr-t {
-  font-weight: 800;
-}
-.cr-o {
-  color: var(--mute);
-}
-.cr-y {
-  text-align: end;
-  font-variant-numeric: tabular-nums;
-  color: var(--mute);
-}
 
 /* ------------------------------------------------------------------ contact + footer */
 .sec-contact .sec-title {
@@ -2060,6 +2097,10 @@ input[type="range"]::-moz-range-thumb {
   .sec-title {
     grid-column: 1 / -1;
   }
+  .cband-t,
+  .cband-grid {
+    grid-column: 1 / -1;
+  }
   .sec-intro {
     grid-column: 1 / span 10;
     margin-top: 22px;
@@ -2070,7 +2111,7 @@ input[type="range"]::-moz-range-thumb {
   .hero-aside {
     grid-column: 1 / span 9;
   }
-  .meter {
+  .hero-foot-l {
     grid-column: 1 / -1;
   }
   .proof {
@@ -2181,10 +2222,6 @@ input[type="range"]::-moz-range-thumb {
   }
   .sim-out {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-  .creds h3,
-  .cr-list {
-    grid-column: 1 / -1;
   }
   .contact-text,
   .seen {
@@ -2316,6 +2353,16 @@ input[type="range"]::-moz-range-thumb {
   }
   .sec-title {
     font-size: clamp(34px, 9.5vw, 52px);
+  }
+  .cband-grid {
+    grid-template-columns: minmax(0, 1fr);
+    border-top: 0;
+  }
+  .cband-col {
+    border-top: 1px solid var(--rule-2);
+  }
+  .cband-col:first-child {
+    border-top: 1px solid var(--fg);
   }
   .sec-intro {
     grid-column: 1 / -1;
@@ -2472,23 +2519,6 @@ input[type="range"]::-moz-range-thumb {
   .lg-dom {
     font-size: 13px;
     margin-top: 4px;
-  }
-  .cr-sec > ul > li,
-  .cr-head {
-    grid-template-columns: minmax(0, 1fr) auto;
-    row-gap: 2px;
-  }
-  .cr-tracks {
-    grid-template-columns: minmax(0, 1fr);
-  }
-  .cr-o {
-    grid-column: 1;
-    grid-row: 2;
-    font-size: 14px;
-  }
-  .cr-y {
-    grid-row: 1;
-    grid-column: 2;
   }
   .contact-mail {
     align-items: flex-start;
