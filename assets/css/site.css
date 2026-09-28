@@ -1785,24 +1785,35 @@ input[type="range"]::-moz-range-thumb {
 .creds h3 {
   grid-column: 1 / span 3;
 }
-.creds > ul {
+.cr-list {
   grid-column: 4 / -1;
+}
+.cr-sec + .cr-sec {
+  margin-top: clamp(28px, 3vw, 44px);
+}
+.cr-sec-t {
+  margin-bottom: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--mute);
+}
+.cr-sec > ul {
   list-style: none;
   margin: 0;
   padding: 0;
   border-top: 1px solid var(--fg);
 }
-.creds > ul > li,
+.cr-sec > ul > li,
 .cr-head {
   display: grid;
   grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.4fr) 64px;
   gap: 16px;
 }
-.creds > ul > li {
+.cr-sec > ul > li {
   padding: 14px 0;
   border-bottom: 1px solid var(--rule);
 }
-.creds > ul > li.cr-group {
+.cr-sec > ul > li.cr-group {
   display: block;
 }
 .cr-tracks {
@@ -2172,7 +2183,7 @@ input[type="range"]::-moz-range-thumb {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   .creds h3,
-  .creds > ul {
+  .cr-list {
     grid-column: 1 / -1;
   }
   .contact-text,
@@ -2462,7 +2473,7 @@ input[type="range"]::-moz-range-thumb {
     font-size: 13px;
     margin-top: 4px;
   }
-  .creds > ul > li,
+  .cr-sec > ul > li,
   .cr-head {
     grid-template-columns: minmax(0, 1fr) auto;
     row-gap: 2px;
